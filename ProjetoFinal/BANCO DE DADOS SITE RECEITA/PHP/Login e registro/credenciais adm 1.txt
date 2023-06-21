@@ -1,4 +1,0 @@
-id do usuario: 1
-nome do usuario: admin
-email do usuario: admin@gmail.com
-senha do usuario(em hash): SHA2('admin1234', 256));

@@ -1,0 +1,13 @@
+area do adm(pagina apos o login)
+(o nome do arquivo devera ser painel.php)
+<?php
+session_start();
+
+// Verificar se o administrador está autenticado
+if (!isset($_SESSION['adm_id'])) {
+    header("Location: login.php"); // Redirecionar para a página de login
+    exit();
+}
+
+// Seu código HTML/PHP para exibir o painel de administração
+?>

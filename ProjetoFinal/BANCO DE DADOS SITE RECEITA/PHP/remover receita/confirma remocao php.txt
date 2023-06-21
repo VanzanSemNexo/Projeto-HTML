@@ -1,0 +1,27 @@
+confirma remoção
+(nome do arquivo devera ser  "confirmar_remocao.php")
+<?php
+// Conexão com o banco de dados
+$servername = "localhost";
+$username = "root";
+$password = "senha";
+$dbname = "site_receitas";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar se houve erro na conexão
+if ($conn->connect_error) {
+    die("Erro na conexão: " . $conn->connect_error);
+}
+
+// Obter o nome da receita a ser removida
+$pesquisa = $_POST['pesquisa'];
+
+// Remover a receita do banco de dados
+$query = "DELETE FROM receitas WHERE rec_titulo = '$pesquisa'";
+$conn->query($query);
+
+echo "Receita removida com sucesso.";
+
+$conn->close();
+?>
